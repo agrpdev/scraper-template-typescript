@@ -38,12 +38,12 @@ const ENDPOINTS = {
 const BE_URL = "https://scraper-scraper-main.kube.agrp.dev/rest/v2/control/";
 
 export class ScraperBuilder<T extends BaseScraper> {
-  private _constructor: new () => T;
+  private createScraper: new () => T;
   private apiKey: string = "";
   private customId: string = "";
 
   constructor(constructor: new () => T) {
-    this._constructor = constructor;
+    this.createScraper = constructor;
   }
 
   setApiKey(apiKey: string) {
@@ -75,7 +75,7 @@ export class ScraperBuilder<T extends BaseScraper> {
 
   async build() {
     const data = await this.registerScraper();
-    const instance = new this._constructor();
+    const instance = new this.createScraper();
     await instance.configure(
       this.apiKey,
       this.customId,
