@@ -35,7 +35,7 @@ API_KEY=your-api-key
 
 ## Usage
 
-1. Create your own scraper in /scrapers based on archiweb.ts example.
+1. Create your own scraper in src/scrapers based on archiweb.ts example.
 
 2. Run the scraper
 
