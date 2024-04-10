@@ -1,4 +1,4 @@
-# TypeScript Scraper Template
+# Scraper Template
 
 This is a TypeScript scraper template designed to help you quickly set up a web scraper using Playwright and interacting with a RESTful API for controlling scraping tasks.
 
