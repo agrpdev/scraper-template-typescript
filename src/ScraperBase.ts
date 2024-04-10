@@ -39,6 +39,7 @@ const BE_URL = "https://scraper-scraper-main.kube.agrp.dev/rest/v2/control/";
 
 export class ScraperBuilder<T extends BaseScraper> {
   private createScraper: new () => T;
+
   private apiKey: string = "";
   private customId: string = "";
 

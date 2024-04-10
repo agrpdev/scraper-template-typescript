@@ -1,49 +1,36 @@
-# Scraper Template
+# TypeScript Scraper Template
 
-This repository contains a template for building scrapers using TypeScript. It includes basic functionalities for crawling and scraping web pages, along with API communication for managing work items and reporting progress.
+This is a TypeScript scraper template designed to help you quickly set up a web scraper using Playwright and interacting with a RESTful API for controlling scraping tasks.
 
-## Installation
+## Prerequisites
 
-To run this scraper, make sure you have Node.js and npm installed on your machine. Then, clone this repository and install dependencies using the following commands:
+Before using this scraper template, ensure you have the following installed:
+- Node.js
+- npm or yarn
+## Installation 
+1. Clone this repository to your local machine:
 
 ```bash
-git clone <repository-url>
-cd scraper-template
-npm install
-```
+git clone https://github.com/agrpdev/scraper-template-typescript
+``` 
+2. Install dependencies:
 
+```bash
+cd scraper-template-typescript
+npm install
+``` 
+3. Set up environment variables: 
+- Create a `.env` file in the root of the project. 
+- Add your API key to the `.env` file:
+
+```makefile
+API_KEY=your-api-key
+```
 ## Usage
 
-To run the scraper, use the following command:
+1. Create your own scraper in /scrapers based on archiweb.ts example.
 
+2. Run the scraper
 ```bash
 npm run dev
 ```
-
-This will start the TypeScript compiler in watch mode and execute the `src/scrapers/archiweb.ts` file.
-
-## Project Structure
-
-- **src/**
-- **scrapers/** : Contains scraper implementations.
-- **archiweb.ts** : Example scraper for the Archiweb.cz website.
-- **types/** : Contains type definitions used throughout the project.
-- **ScraperBase.ts** : Base class for scrapers, handling API communication and common functionalities.
-- **index.ts** : Entry point of the application.
-
-## Customization
-
-- **ScraperBase.ts** : Modify this file to customize API endpoints, authentication, and other common functionalities shared across scrapers.
-- **scrapers/** : Add or modify scraper implementations in separate files within this directory.
-
-## Dependencies
-
-- [dotenv](https://www.npmjs.com/package/dotenv) : Loads environment variables from a `.env` file.
-- [playwright](https://www.npmjs.com/package/playwright) : Automation library for web browsers.
-- [ts-node](https://www.npmjs.com/package/ts-node) : TypeScript execution environment for Node.js.
-- [ts-pattern](https://www.npmjs.com/package/ts-pattern) : Pattern matching for TypeScript.
-- [zod](https://www.npmjs.com/package/zod) : TypeScript-first schema declaration and validation.
-
-## License
-
-Feel free to customize and extend this template for your specific scraping needs. If you have any questions or suggestions, please open an issue or pull request on GitHub. Happy scraping! 🚀
