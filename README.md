@@ -37,7 +37,7 @@ API_KEY=your-api-key
 
 1. Create your own scraper in src/scrapers based on archiweb.ts example.
 
-2. Run the scraper
+2. Run the scraper:
 
 ```bash
 npm run dev
