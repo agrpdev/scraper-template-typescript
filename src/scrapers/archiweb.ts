@@ -52,9 +52,9 @@ class ArchiwebScraper extends BaseScraper {
 
       try {
         if (section === "zpravy") {
-          await this.crawlZpravy(page);
+          await this.crawlNews(page);
         } else if (section === "architekti") {
-          await this.crawlArchitekti(page);
+          await this.crawlArchitects(page);
         }
       } catch (error) {
         console.error("Error during scraping:", error);
@@ -67,7 +67,7 @@ class ArchiwebScraper extends BaseScraper {
   }
 
   // Implementation of the crawling logic using Playwright
-  async crawlZpravy(page: Page) {
+  async crawlNews(page: Page) {
     const { crawlSections, baseDomain } = this.details
       .customSettings as CustomSettings;
     const seenHrefs = new Set();
@@ -110,8 +110,8 @@ class ArchiwebScraper extends BaseScraper {
     }
   }
 
-  async crawlArchitekti(page: Page) {
-    // Crawl architekti logic (similar to crawlZpravy)...
+  async crawlArchitects(page: Page) {
+    // Crawl architekti logic (similar to crawlNews)...
   }
 
   // Scraping
@@ -121,9 +121,9 @@ class ArchiwebScraper extends BaseScraper {
 
     try {
       if (workItem.task.section === "zpravy") {
-        await this.scrapeZpravy(workItem, page);
+        await this.scrapeNews(workItem, page);
       } else if (workItem.task.section === "architekti") {
-        await this.scrapeArchitekti(workItem, page);
+        await this.scrapeArchitects(workItem, page);
       } else {
         throw new Error("Unknown content type");
       }
@@ -136,7 +136,7 @@ class ArchiwebScraper extends BaseScraper {
     }
   }
 
-  async scrapeZpravy(workItem: ScrapeWorkItem, page: Page) {
+  async scrapeNews(workItem: ScrapeWorkItem, page: Page) {
     await page.goto(workItem.task.url);
 
     const title = await page.$eval(
@@ -174,8 +174,8 @@ class ArchiwebScraper extends BaseScraper {
     ]);
   }
 
-  async scrapeArchitekti(workItem: ScrapeWorkItem, page: Page) {
-    // Scrape architekti logic (similar to scrapeZpravy)...
+  async scrapeArchitects(workItem: ScrapeWorkItem, page: Page) {
+    // Scrape architekti logic (similar to scrapeNews)...
   }
 }
 
